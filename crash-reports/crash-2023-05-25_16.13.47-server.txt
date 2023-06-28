@@ -1,0 +1,186 @@
+---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 25/05/2023, 16:13
+Description: Ticking block entity
+
+java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.tick(BlockIronFurnaceTileBase.java:522) ~[ironfurnaces-1.18.2-3.3.3.jar%2365!/:3.3.3] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.m_142224_(LevelChunk.java:673) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.m_142224_(LevelChunk.java:766) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.m_46463_(Level.java:476) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.m_8793_(ServerLevel.java:327) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:immersiveengineering.mixins.json:coremods.ServerWorldMixin,pl:mixin:APP:botania_xplat.mixins.json:MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:902) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_5703_(DedicatedServer.java:326) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:842) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:685) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.tick(BlockIronFurnaceTileBase.java:522) ~[ironfurnaces-1.18.2-3.3.3.jar%2365!/:3.3.3] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.m_142224_(LevelChunk.java:673) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.m_142224_(LevelChunk.java:766) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.m_46463_(Level.java:476) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.m_8793_(ServerLevel.java:327) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:immersiveengineering.mixins.json:coremods.ServerWorldMixin,pl:mixin:APP:botania_xplat.mixins.json:MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:A}
+-- Block entity being ticked --
+Details:
+	Name: ironfurnaces:diamond_furnace // ironfurnaces.tileentity.furnaces.BlockDiamondFurnaceTile
+	Block: Block{ironfurnaces:diamond_furnace}[facing=west,jovial=0,lit=false,type=0]
+	Block location: World: (-60,80,-920), Section: (at 4,0,8 in -4,5,-58; chunk contains blocks -64,-64,-928 to -49,319,-913), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,-64,-1024 to -1,319,-513)
+	Block: Block{ironfurnaces:diamond_furnace}[facing=west,jovial=0,lit=false,type=0]
+	Block location: World: (-60,80,-920), Section: (at 4,0,8 in -4,5,-58; chunk contains blocks -64,-64,-928 to -49,319,-913), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,-64,-1024 to -1,319,-513)
+Stacktrace:
+	at net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.m_142224_(LevelChunk.java:673) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.m_142224_(LevelChunk.java:766) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:classloading}
+	at net.minecraft.world.level.Level.m_46463_(Level.java:476) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.m_8793_(ServerLevel.java:327) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:immersiveengineering.mixins.json:coremods.ServerWorldMixin,pl:mixin:APP:botania_xplat.mixins.json:MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:902) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_5703_(DedicatedServer.java:326) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:842) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:685) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Feyrowan'/358, l='ServerLevel[world]', x=-81.66, y=72.40, z=-945.43]]
+	Chunk stats: 4975
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-32,64,-32), Section: (at 0,0,0 in -2,4,-2; chunk contains blocks -32,-64,-32 to -17,319,-17), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Level time: 3139 game time, 3139 day time
+	Level name: world
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Level weather: Rain time: 138603 (now: false), thunder time: 107204 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:902) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_5703_(DedicatedServer.java:326) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:842) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:685) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_177918_(MinecraftServer.java:261) ~[server-1.18.2-20220404.173914-srg.jar%2394!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:balm.mixins.json:MinecraftServerMixin,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.2
+	Minecraft Version ID: 1.18.2
+	Operating System: Linux (amd64) version 5.15.0-72-generic
+	Java Version: 17.0.7, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Private Build
+	Memory: 508352520 bytes (484 MiB) / 2038431744 bytes (1944 MiB) up to 2038431744 bytes (1944 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+	Identifier: Intel64 Family 6 Model 58 Stepping 9
+	Microarchitecture: Ivy Bridge (Client)
+	Frequency (GHz): 3.20
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: Xeon E3-1200 v2/3rd Gen Core processor Graphics Controller
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 256.00
+	Graphics card #0 deviceId: 0x0152
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7982.68
+	Virtual memory used (MB): 3068.34
+	Swap memory total (MB): 4096.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 20; [ServerPlayer['Feyrowan'/358, l='ServerLevel[world]', x=-81.66, y=72.40, z=-945.43]]
+	Data Packs: vanilla, mod:additionalentityattributes, mod:refinedpipes, mod:caelus (incompatible), mod:apoli (incompatible), mod:sophisticatedcore (incompatible), mod:waystones (incompatible), mod:journeymap, mod:cookingforblockheads (incompatible), mod:naturescompass (incompatible), mod:configured (incompatible), mod:pneumaticcraft, mod:create_confectionery, mod:sophisticatedbackpacks (incompatible), mod:catalogue (incompatible), mod:balm (incompatible), mod:jeresources (incompatible), mod:immersivepetroleum (incompatible), mod:cloth_config (incompatible), mod:forge, mod:refinedstorage, mod:jei (incompatible), mod:zerocore, mod:cofh_core, mod:thermal, mod:thermal_integration, mod:tconstruct (incompatible), mod:farmersdelight (incompatible), mod:rebornstorage, mod:theoneprobe (incompatible), mod:terrablender (incompatible), mod:thermal_innovation, mod:immersiveengineering, mod:biomesoplenty (incompatible), mod:jade, mod:ironfurnaces (incompatible), mod:allthemodium, mod:botania (incompatible), mod:calio (incompatible), mod:easy_villagers (incompatible), mod:flywheel (incompatible), mod:create, mod:curios (incompatible), mod:patchouli (incompatible), mod:origins (incompatible), mod:mantle (incompatible), mod:create_factory, mod:thermal_cultivation, mod:storagedrawers (incompatible), mod:thermal_expansion, mod:ftbultimine (incompatible), mod:thermal_locomotion, mod:architectury (incompatible), mod:ftblibrary (incompatible), mod:ferritecore (incompatible), mod:bigreactors, mod:refinedstorageaddons, mod:geckolib3 (incompatible)
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 9.1.3+9.1.3+main.9b69c82a
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 slf4jfixer PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		Forge-1.0.1-1.18.2.jar                            |Additional Entity Attributes  |additionalentityattributes    |1.0.0+1.18.2        |DONE      |Manifest: NOSIGNATURE
+		refinedpipes-0.6.2.jar                            |Refined Pipes                 |refinedpipes                  |0.6.2               |DONE      |Manifest: NOSIGNATURE
+		caelus-forge-1.18.1-3.0.0.2.jar                   |Caelus API                    |caelus                        |1.18.1-3.0.0.2      |DONE      |Manifest: NOSIGNATURE
+		apoli-forge-1.18.2-1.18.2-2.3.4.0.jar             |Apoli                         |apoli                         |1.18.2-2.3.4.0      |DONE      |Manifest: NOSIGNATURE
+		sophisticatedcore-1.18.2-0.5.56.273.jar           |Sophisticated Core            |sophisticatedcore             |1.18.2-0.5.56.273   |DONE      |Manifest: NOSIGNATURE
+		waystones-forge-1.18.2-10.2.1.jar                 |Waystones                     |waystones                     |10.2.1              |DONE      |Manifest: NOSIGNATURE
+		journeymap-1.18.2-5.9.7-forge.jar                 |Journeymap                    |journeymap                    |5.9.7               |DONE      |Manifest: NOSIGNATURE
+		cookingforblockheads-forge-1.18.2-12.2.0.jar      |CookingForBlockheads          |cookingforblockheads          |12.2.0              |DONE      |Manifest: NOSIGNATURE
+		NaturesCompass-1.18.2-1.9.7-forge.jar             |Nature's Compass              |naturescompass                |1.18.2-1.9.7-forge  |DONE      |Manifest: NOSIGNATURE
+		configured-2.0.1-1.18.2.jar                       |Configured                    |configured                    |2.0.1               |DONE      |Manifest: NOSIGNATURE
+		pneumaticcraft-repressurized-1.18.2-3.6.0-19.jar  |PneumaticCraft: Repressurized |pneumaticcraft                |1.18.2-3.6.0-19     |DONE      |Manifest: NOSIGNATURE
+		create-confectionery1.18.2_v1.0.8.jar             |Create Confectionery          |create_confectionery          |1.0.8               |DONE      |Manifest: NOSIGNATURE
+		sophisticatedbackpacks-1.18.2-3.18.48.835.jar     |Sophisticated Backpacks       |sophisticatedbackpacks        |1.18.2-3.18.48.835  |DONE      |Manifest: NOSIGNATURE
+		catalogue-1.6.2-1.18.2.jar                        |Catalogue                     |catalogue                     |1.6.2               |DONE      |Manifest: NOSIGNATURE
+		balm-3.2.6.jar                                    |Balm                          |balm                          |3.2.6               |DONE      |Manifest: NOSIGNATURE
+		JustEnoughResources-1.18.2-0.14.1.171.jar         |Just Enough Resources         |jeresources                   |0.14.1.171          |DONE      |Manifest: NOSIGNATURE
+		ImmersivePetroleum-1.18.2-4.1.0-21.jar            |Immersive Petroleum           |immersivepetroleum            |4.1.0-21            |DONE      |Manifest: NOSIGNATURE
+		cloth-config-6.4.90-forge.jar                     |Cloth Config v4 API           |cloth_config                  |6.4.90              |DONE      |Manifest: NOSIGNATURE
+		forge-1.18.2-40.2.4-universal.jar                 |Forge                         |forge                         |40.2.4              |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		refinedstorage-1.10.5.jar                         |Refined Storage               |refinedstorage                |1.10.5              |DONE      |Manifest: NOSIGNATURE
+		jei-1.18.2-forge-10.2.1.1004.jar                  |Just Enough Items             |jei                           |10.2.1.1004         |DONE      |Manifest: NOSIGNATURE
+		ZeroCore2-1.18.2-2.1.34.jar                       |Zero CORE 2                   |zerocore                      |1.18.2-2.1.34       |DONE      |Manifest: NOSIGNATURE
+		server-1.18.2-20220404.173914-srg.jar             |Minecraft                     |minecraft                     |1.18.2              |DONE      |Manifest: NOSIGNATURE
+		cofh_core-1.18.2-9.2.1.39.jar                     |CoFH Core                     |cofh_core                     |9.2.1               |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_foundation-1.18.2-9.2.0.46.jar            |Thermal Series                |thermal                       |9.2.0.46            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		thermal_integration-1.18.2-9.2.0.16.jar           |Thermal Integration           |thermal_integration           |9.2.0.16            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		TConstruct-1.18.2-3.6.4.113.jar                   |Tinkers' Construct            |tconstruct                    |3.6.4.113           |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.18.2-1.2.1.jar                   |Farmer's Delight              |farmersdelight                |1.18.2-1.2.1        |DONE      |Manifest: NOSIGNATURE
+		rebornstorage-1.18.2-4.0.12.jar                   |RebornStorage                 |rebornstorage                 |4.0.12              |DONE      |Manifest: NOSIGNATURE
+		theoneprobe-1.18-5.1.2.jar                        |The One Probe                 |theoneprobe                   |1.18-5.1.2          |DONE      |Manifest: NOSIGNATURE
+		TerraBlender-forge-1.18.2-1.2.0.126.jar           |TerraBlender                  |terrablender                  |1.2.0.126           |DONE      |Manifest: NOSIGNATURE
+		thermal_innovation-1.18.2-9.2.0.17.jar            |Thermal Innovation            |thermal_innovation            |9.2.0.17            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		ImmersiveEngineering-1.18.2-8.4.0-161.jar         |Immersive Engineering         |immersiveengineering          |1.18.2-8.4.0-161    |DONE      |Manifest: 44:39:94:cf:1d:8c:be:3c:7f:a9:ee:f4:1e:63:a5:ac:61:f9:c2:87:d5:5b:d9:d6:8c:b5:3e:96:5d:8e:3f:b7
+		BiomesOPlenty-1.18.2-16.0.0.134.jar               |Biomes O' Plenty              |biomesoplenty                 |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		Jade-1.18.2-forge-5.2.6.jar                       |Jade                          |jade                          |5.2.6               |DONE      |Manifest: NOSIGNATURE
+		ironfurnaces-1.18.2-3.3.3.jar                     |Iron Furnaces                 |ironfurnaces                  |3.3.3               |DONE      |Manifest: NOSIGNATURE
+		allthemodium-1.9.6-1.18.2-40.1.51.jar             |Allthemodium                  |allthemodium                  |1.9.6-1.18.2-40.1.51|DONE      |Manifest: NOSIGNATURE
+		Botania-1.18.2-435.jar                            |Botania                       |botania                       |1.18.2-435          |DONE      |Manifest: NOSIGNATURE
+		calio-forge-1.18.2-1.18.2-1.6.0.0.jar             |Calio                         |calio                         |1.18.2-1.6.0.0      |DONE      |Manifest: NOSIGNATURE
+		easy_villagers-1.18.2-1.0.11.jar                  |Easy Villagers                |easy_villagers                |1.18.2-1.0.11       |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.18.2-0.6.8.a.jar                 |Flywheel                      |flywheel                      |0.6.8.a             |DONE      |Manifest: NOSIGNATURE
+		create-1.18.2-0.5.1.a.jar                         |Create                        |create                        |0.5.1.a             |DONE      |Manifest: NOSIGNATURE
+		curios-forge-1.18.2-5.0.9.0.jar                   |Curios API                    |curios                        |1.18.2-5.0.9.0      |DONE      |Manifest: NOSIGNATURE
+		Patchouli-1.18.2-71.1.jar                         |Patchouli                     |patchouli                     |1.18.2-71.1         |DONE      |Manifest: NOSIGNATURE
+		origins-forge-1.18.2-1.18.2-1.5.0.1-fatjar.jar    |Origins                       |origins                       |1.18.2-1.5.0.1      |DONE      |Manifest: NOSIGNATURE
+		Mantle-1.18.2-1.9.45.jar                          |Mantle                        |mantle                        |1.9.45              |DONE      |Manifest: NOSIGNATURE
+		create-factory-1.18.2-v1.6.jar                    |Create: Factory               |create_factory                |1.6                 |DONE      |Manifest: NOSIGNATURE
+		thermal_cultivation-1.18.2-9.2.0.16.jar           |Thermal Cultivation           |thermal_cultivation           |9.2.0.16            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		StorageDrawers-1.18.2-10.2.1.jar                  |Storage Drawers               |storagedrawers                |10.2.1              |DONE      |Manifest: NOSIGNATURE
+		thermal_expansion-1.18.2-9.2.0.20.jar             |Thermal Expansion             |thermal_expansion             |9.2.0.20            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		ftb-ultimine-forge-1802.3.3-build.70.jar          |FTB Ultimine                  |ftbultimine                   |1802.3.3-build.70   |DONE      |Manifest: NOSIGNATURE
+		thermal_locomotion-1.18.2-9.2.0.13.jar            |Thermal Locomotion            |thermal_locomotion            |9.2.0.13            |DONE      |Manifest: 75:0b:cc:9b:64:2e:9b:c4:41:d1:95:00:71:ee:87:1a:b3:5e:4b:da:8e:e8:39:00:fd:5d:e5:9c:40:42:33:09
+		architectury-4.11.93-forge.jar                    |Architectury                  |architectury                  |4.11.93             |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-1802.3.11-build.177.jar         |FTB Library                   |ftblibrary                    |1802.3.11-build.177 |DONE      |Manifest: NOSIGNATURE
+		ferritecore-4.2.2-forge.jar                       |Ferrite Core                  |ferritecore                   |4.2.2               |DONE      |Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		ExtremeReactors2-1.18.2-2.0.63.jar                |Extreme Reactors              |bigreactors                   |1.18.2-2.0.63       |DONE      |Manifest: NOSIGNATURE
+		refinedstorageaddons-0.8.2.jar                    |Refined Storage Addons        |refinedstorageaddons          |0.8.2               |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.18-3.0.57.jar                    |GeckoLib                      |geckolib3                     |3.0.57              |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: e7aa5fff-5345-4227-820d-371c52da15d2
+	FML: 40.2
+	Forge: net.minecraftforge:40.2.4
